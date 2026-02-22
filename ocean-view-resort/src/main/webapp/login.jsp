@@ -117,7 +117,7 @@
         </form>
 
         <%
-            if (request.getParameter("errr") != null) {
+            if (request.getParameter("error") != null) {
         %>
             <p class="error">Invalid username or password</p>
         <%
