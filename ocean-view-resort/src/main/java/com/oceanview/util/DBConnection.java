@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-    private static final String URL = "jdbc:mysql://localhost:3308/ocean_view_db";
+    private static final String URL = "jdbc:mysql://localhost:3307/ocean_view_db?useSSL=false&serverTimezone=UTC";
     private static final String USER = "root";
     private static final String PASSWORD = "7010@Aib";
 
