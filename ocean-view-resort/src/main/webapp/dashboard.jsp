@@ -49,7 +49,8 @@
         </div>
 
         <div class="footer">
-            <p>| © 2026 Ocean View Resort |</p>
+        
+            <p>|  © 2026 Ocean View Resort  |</p>
         </div>
 
     </div>
