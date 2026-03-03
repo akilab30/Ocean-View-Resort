@@ -1,12 +1,11 @@
-
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ocean View Resort🌊 | Dashboard</title>
+<title>Ocean View Resort🌊 | Dashboard</title>
 
-    <!-- Correct CSS link -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dashboard.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/theme.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/dashboard.css">
 </head>
 
 <body>
@@ -23,7 +22,7 @@
 
         <p>Welcome, <strong>${sessionScope.user}</strong>. Select an option below.</p>
 
-        <!-- Cards -->
+        <!-- Action Cards -->
         <div class="card-grid">
 
             <div class="card">
@@ -32,13 +31,13 @@
             </div>
 
             <div class="card">
-                <a href="viewReservation.jsp">📄 View Reservation</a>
-                <p>Search reservation inquiry</p>
+                <a href="${pageContext.request.contextPath}/viewReservation">📄 View Reservations</a>
+                <p>Browse all reservations</p>
             </div>
 
             <div class="card">
-                <a href="bill.jsp">💰 Calculate Bill</a>
-                <p>Generate billing</p>
+                <a href="reservation.jsp">💰 Create & Calculate Bill</a>
+                <p>Create reservation to generate bill</p>
             </div>
 
             <div class="card">
@@ -48,9 +47,34 @@
 
         </div>
 
+        <!-- Room Status Section -->
+        <div class="room-status-section">
+
+            <h3 class="room-status-title">Room Status Overview</h3>
+
+            <div class="room-status-grid">
+
+                <div class="status-card occupied">
+                    <h4>Occupied</h4>
+                    <span>${occupiedCount}</span>
+                </div>
+
+                <div class="status-card available">
+                    <h4>Available</h4>
+                    <span>${availableCount}</span>
+                </div>
+
+                <div class="status-card maintenance">
+                    <h4>Maintenance</h4>
+                    <span>${maintenanceCount}</span>
+                </div>
+
+            </div>
+
+        </div>
+
         <div class="footer">
-        
-            <p>|  © 2026 Ocean View Resort  |</p>
+            <p>| © 2026 Ocean View Resort |</p>
         </div>
 
     </div>
