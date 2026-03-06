@@ -17,7 +17,7 @@ public class LogoutServlet extends HttpServlet {
         HttpSession session = req.getSession(false); // don't create new
 
         if (session != null) {
-            session.invalidate(); // ✅ DESTROY SESSION
+            session.invalidate(); 
         }
 
         // Prevent browser back-button cache
