@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+/* ===== Global Typography ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===== Shared Ocean Background + Subtle Gradient ===== */
+.page-bg {
+  min-height: 100vh;
+  width: 100%;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.10)),
+    url("../images/hotel.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Centering Overlay ===== */
+.overlay {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ===== Reusable Glass Panel ===== */
+.glass-box {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  color: #111;
+}
+
+/* Sizing helpers for common forms/cards */
+.glass-sm { width: 340px; padding: 24px; }
+.glass-md { width: 420px; padding: 30px; }
+.glass-lg { width: 95%; max-width: 1100px; padding: 30px; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: #222;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+.btn:hover { background: #000; }
+
+/* Corner utility links (Dashboard / Help) */
+.corner { position: absolute; top: 20px; }
+.corner.left { left: 20px; }
+.corner.right { right: 20px; }
+
+/* Tables inside glass */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th, .table td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  font-size: 14px;
+  color: #111;
+}
+.table th { background: #f2f2f2; }
+.table tr:nth-child(even) { background: #fafafa; }

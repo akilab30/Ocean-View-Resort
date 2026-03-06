@@ -8,12 +8,14 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Home CSS -->
+    <!-- Shared Theme + Home CSS -->
+    <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
-
+ 
 <body>
-
+ 
+<div class="page-bg">
 <div class="home-bg">
     <div class="overlay">
 
@@ -46,6 +48,11 @@
                 <i class="fa-solid fa-user"></i>
                 Staff Login
             </a>
+
+            <a href="help.jsp" class="cta-btn" style="border-radius: 10px;">
+                <i class="fa-solid fa-circle-question"></i>
+                Help
+            </a>
         </div>
 
         <!-- Footer -->
@@ -54,6 +61,7 @@
         </div>
 
     </div>
+</div>
 </div>
 
 </body>
