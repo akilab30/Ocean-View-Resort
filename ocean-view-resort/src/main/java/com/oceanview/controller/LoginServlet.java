@@ -11,26 +11,31 @@ import com.oceanview.model.User;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res)
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response)
             throws ServletException, IOException {
 
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
         UserDAO dao = new UserDAO();
-        User user = dao.login(username, password); // ✅ DB LOGIN
+        User user = dao.login(username, password);
 
         if (user != null) {
-            HttpSession session = req.getSession();
-            session.setAttribute("user", user.getUsername());
+
+            HttpSession session = request.getSession(true);
+
+            session.setAttribute("user", user);
+            session.setAttribute("username", user.getUsername());
             session.setAttribute("role", user.getRole());
 
-            res.sendRedirect(req.getContextPath() + "/dashboard.jsp");
+            response.sendRedirect(request.getContextPath() + "/dashboard.jsp");
+
         } else {
-            res.sendRedirect(req.getContextPath() + "/login.jsp?error=1");
+
+            request.setAttribute("error", "Invalid username or password");
+            request.getRequestDispatcher("/login.jsp")
+                   .forward(request, response);
         }
     }
 }

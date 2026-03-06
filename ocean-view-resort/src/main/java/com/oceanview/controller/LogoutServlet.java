@@ -8,23 +8,16 @@ import javax.servlet.http.*;
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res)
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session = req.getSession(false); // don't create new
+        HttpSession session = request.getSession(false);
 
-        if (session != null) {
-            session.invalidate(); // ✅ DESTROY SESSION
+        if(session != null){
+            session.invalidate();
         }
 
-        // Prevent browser back-button cache
-        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-        res.setHeader("Pragma", "no-cache");
-        res.setDateHeader("Expires", 0);
-
-        res.sendRedirect(req.getContextPath() + "/login.jsp");
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 }
